@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.6
+    container_name: db
+    ports:
+      - 3306:3306
+    volumes:
+      - ./DB/mysql:/var/lib/mysql
+      - ./DB/init:/docker-entrypoint-initdb.d
+      - ./DB/config/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=sample
+      - TZ=Asia/Tokyo
+    tty: true
+
