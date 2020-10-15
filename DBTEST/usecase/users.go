@@ -10,7 +10,7 @@ type UsersRepository struct {
 }
 
 func (r *UsersRepository)GetUserByID(id int)string{
-	user := r.db.GetUserByID(id)
+	user, _ := r.db.GetUserByID(id)
 	userinfo := user.Name + "は" + strconv.Itoa(user.Age) + "歳です"
 	return userinfo
 }
