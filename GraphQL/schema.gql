@@ -1,0 +1,14 @@
+type Query {
+  user(id: ID): User!
+  pet(id: ID): Pet!
+}
+
+type User {
+  id: ID
+  name: String
+}
+
+type Pet {
+  id: ID
+  name: String
+}
