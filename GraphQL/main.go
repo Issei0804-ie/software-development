@@ -24,8 +24,9 @@ func main() {
 					Type: graphql.Int,
 				},
 			},
-			Resolve: func(p graphql.ResolveParams) (i interface{}, e error) {id := p.Args["hoge"]
-				return id, nil
+			Resolve: func(p graphql.ResolveParams) (i interface{}, e error) {
+				// := p.Args["hoge"]
+				return []string{"g","j"}, nil
 			},
 		},
 	}
@@ -40,9 +41,7 @@ func main() {
 	query := `
 		{
 			hello
-			world(
-			hoge:1
-			)
+			world(hoge:3)
 		}
 	`
 	params := graphql.Params{Schema: schema, RequestString: query}
