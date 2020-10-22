@@ -24,8 +24,7 @@ func main() {
 					Type: graphql.Int,
 				},
 			},
-			Resolve: func(p graphql.ResolveParams) (i interface{}, e error) {
-				id := p.Args["hoge"]
+			Resolve: func(p graphql.ResolveParams) (i interface{}, e error) {id := p.Args["hoge"]
 				return id, nil
 			},
 		},
